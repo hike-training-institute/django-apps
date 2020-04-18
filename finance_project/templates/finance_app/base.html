@@ -14,10 +14,12 @@
     <link rel="stylesheet" href='{% static "css/stylesheet.css" %}'>
 </head>
 
-{% block content %}
-{% endblock %}
-
 <body>
+
+{% block home_page_content %}
+{% endblock home_page_content %}
+
+{% include "finance_app/footer_1.html" %}
 
 </body>
 
