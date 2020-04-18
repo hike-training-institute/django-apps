@@ -32,5 +32,11 @@ python manage.py migrate
 ##### runserver 
 python manage.py runserver
 
+##### superuser-password
+Admin@123
+
+##### Static
+STATICFILES_DIRS is need to be set carefully for your local static files when running in debug = True mode 
+
 
 

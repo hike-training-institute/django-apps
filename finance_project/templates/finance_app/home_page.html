@@ -1,0 +1,54 @@
+
+{% extends "finance_app/base.html" %}
+{% block content %}
+{% load static %}
+<!-- Headers Section Starts -->
+<section class="headers_section">
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <img class="img-responsive img-rounded" src='{% static "images/HTI_LOGO.png" %}' alt="HTI  LOGO">
+        </div>
+        <div id="app_name" class="col-md-7"> <h1>Hike Training Institute Finance App</h1> </div>
+        <div class="col-md-1">
+            <button class="btn btn-primary btn-block" onclick="openForm()">Login</button>
+        </div>
+        <div class="col-md-1">
+            <button class="btn btn-primary btn-block" >Sign Up</button>
+        </div>
+    </div>
+</div>
+</section>
+<!-- Headers Section Ends -->
+
+<!-- Login Pop Up  Section Starts -->
+<div class="form-popup" id="myForm" style="display: none;">
+    <h3>Enter Username and Password to Login</h3>
+    <form class="form-container" method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    <label><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" required>
+
+    <label><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" required>
+
+    <button type="submit" class="btn" onclick="openForm()">Login</button>
+    <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+<!-- Login Pop Up  Section Ends -->
+
+<!-- javascript Section Starts -->
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+</script>
+
+{% endblock content %}
+<!-- javascript Section Ends -->
+
